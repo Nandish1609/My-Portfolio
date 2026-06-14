@@ -1,0 +1,252 @@
+* {
+  margin: unset;
+  padding: unset;
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+  box-sizing: border-box;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background-image: url("/images_logos/wallhaven-q65m2q_1920x1080.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  color: #f1e3e4;
+}
+
+.header {
+  padding: 16px clamp(16px, 4vw, 48px);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+i {
+  color: #f1e3e4;
+}
+
+#name {
+  color: #00ff00;
+  font-size: clamp(24px, 4vw, 30px);
+  white-space: nowrap;
+  background-image: linear-gradient(180deg, #f1e3e4, #00ff00);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent; 
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(8px, 2vw, 20px);
+  flex-wrap: wrap;
+}
+
+.navbar a {
+  text-decoration: unset;
+  padding: 4px 10px;
+  color: #f1e3e4;
+  font-size: 18px;
+  border: 1.75px solid transparent;
+  border-radius: 0px;
+  transition: all 0.3s ease-out;
+}
+
+.navbar a:hover {
+  border-color: #f1e3e4;
+  border-radius: 15px;
+}
+
+.links {
+  margin: 24px 0 0;
+  font-size: clamp(28px, 5vw, 35px);
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.links a {
+  border: 1px solid #f1e3e4;
+  border-radius: 0 10px 0 10px;
+  width: 48px;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.links a i {
+  color: #f1e3e4;
+}
+
+#main-content {
+  flex: 1;
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  padding: clamp(32px, 6vw, 72px) clamp(18px, 5vw, 64px);
+}
+
+#skills {
+  text-align: center;
+  background-image: linear-gradient(180deg, #f1e3e4, #00ff00);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  font-size: clamp(38px, 7vw, 60px);
+  margin-bottom: 14px;
+}
+
+#skill-desc {
+  text-align: center;
+  font-size: clamp(16px, 2vw, 18px);
+  line-height: 1.65;
+  max-width: 680px;
+  margin: 0 auto clamp(36px, 7vw, 86px);
+  background-image: linear-gradient(180deg, #f1e3e4, #00ff00);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(84px, 1fr));
+  width: 100%;
+  max-width: 780px;
+  margin: 0 auto;
+  align-items: center;
+  gap: clamp(18px, 4vw, 42px);
+  justify-content: center;
+  justify-items: center;
+}
+
+.icon {
+  width: clamp(64px, 11vw, 86px);
+  aspect-ratio: 1;
+  font-size: clamp(30px, 5vw, 42px);
+  border: 1px solid white;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer {
+  margin-top: 50px;
+}
+
+footer hr {
+  border: none;
+  height: 0.1px;
+  background-color: #333;
+}
+
+footer p {
+  text-align: center;
+  color: #888;
+  padding: 20px;
+}
+
+@media (max-width: 900px) {
+  body {
+    background-attachment: scroll;
+  }
+
+  .header {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .navbar {
+    width: 100%;
+  }
+
+  #skills {
+    text-align: center;
+  }
+
+  .container {
+    grid-template-columns: repeat(3, minmax(72px, 1fr));
+    max-width: 420px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding-inline: 12px;
+    gap: 16px;
+  }
+
+  #name {
+    font-size: 22px;
+  }
+
+  .navbar {
+    gap: 8px;
+  }
+
+  .navbar a {
+    font-size: 14px;
+    padding: 4px 8px;
+  }
+
+  #main-content {
+    padding: 28px 16px 12px;
+  }
+
+  #skills {
+    font-size: 32px;
+  }
+
+  #skill-desc {
+    font-size: 15px;
+    margin-bottom: 30px;
+  }
+
+  .container {
+    grid-template-columns: repeat(2, minmax(72px, 1fr));
+    gap: 18px;
+    max-width: 220px;
+  }
+
+  .icon {
+    width: 72px;
+    font-size: 32px;
+  }
+
+  footer p {
+    padding-inline: 12px;
+    font-size: 14px;
+  }
+}
