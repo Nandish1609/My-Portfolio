@@ -17,6 +17,8 @@
   box-sizing: border-box;
 }
 
+
+
 html {
   scroll-behavior: smooth;
 }
@@ -28,11 +30,16 @@ body::-webkit-scrollbar {
 
 body {
   min-height: 100vh;
-  background-image: url("/images_logos/wallhaven-q65m2q_1920x1080.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(255, 255, 255, 0.02) 0%,
+      rgba(0, 0, 0, 0.5) 85%
+    ),
+    radial-gradient(circle, rgba(76, 255, 76, 0.15) 1px, transparent 1px),
+    linear-gradient(135deg, #0d1117, #161b22, #010409);
+
+  background-size: cover, 24px 24px, cover;
   display: flex;
   flex-direction: column;
 }
@@ -58,14 +65,14 @@ h1 i {
   background-image: linear-gradient(180deg, #f1e3e4, #00ff00);
   background-clip: text;
   -webkit-background-clip: text;
-  color: transparent; 
+  color: transparent;
 }
 
 .navbar {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: clamp(8px, 2vw, 20px);
+  gap: clamp(8px, 2vw, 30px);
   flex-wrap: wrap;
 }
 
@@ -77,9 +84,15 @@ h1 i {
   border: 1.75px solid transparent;
   border-radius: 0px;
   transition: all 0.3s ease-out;
+  
 }
 
 .navbar a:hover {
+  border-color: #f1e3e4;
+  border-radius: 15px;
+}
+
+.navbar a.active {
   border-color: #f1e3e4;
   border-radius: 15px;
 }
@@ -99,21 +112,22 @@ h1 i {
 .greeting {
   text-align: center;
   color: #f1e3e4;
-  font-size: clamp(34px, 7vw, 60px);
+  font-size: clamp(40px, 6vw, 68px);
   line-height: 1.35;
-  
 }
 
 .role {
   text-align: center;
   color: #f1e3e4;
-  font-size: clamp(18px, 3vw, 25px);
-  line-height: 1.5;
-  margin-top: 8px;
+  font-size: clamp(16px, 3vw, 22px);
+  line-height: 1.75;
+  font-weight: 600;
+  margin-top: 0px;
+  opacity: 0.85;
+  letter-spacing: 0.5;
 }
 
 span {
-  color: #00ff00;
   background-image: linear-gradient(180deg, #f1e3e4, #00ff00);
   background-clip: text;
   -webkit-background-clip: text;
@@ -144,12 +158,44 @@ span {
 }
 
 .links a:hover {
-  border-color: #D8DDDE;
+  border-color: #d8ddde;
   border-radius: 0 15px 0 15px;
+  box-shadow: 0 0 15px rgba(76, 255, 76, 0.3);
+  transform: translateY(-3px);
 }
 
 .links a i {
-  color: #CFCBCA;
+  color: #cfcbca;
+}
+
+.resume {
+  margin: 0 auto;
+  padding: 10px;
+  color: #cfcbca;
+}
+
+div .resumebtn {
+  margin: 24px 0 0;
+  font-size: clamp(16px, 5vw, 18px);
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  text-decoration: unset;
+  color: #cfcbca;
+  border-radius: 7.5px;
+  border: 1px solid #f1e3e4;
+  width: 100px;
+  text-align: center;
+  padding:  2.5px 20px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-out;
+}
+
+.resumebtn:hover {
+  box-shadow: 0 0 15px rgba(76, 255, 76, 0.3);
+  transform: translateY(-3px);
 }
 
 footer {

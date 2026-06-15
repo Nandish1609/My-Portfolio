@@ -17,6 +17,22 @@
   box-sizing: border-box;
 }
 
+#main-content {
+  animation: pageLoad 0.6s ease-out;
+}
+
+@keyframes pageLoad {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -28,11 +44,16 @@ body::-webkit-scrollbar {
 
 body {
   min-height: 100vh;
-  background-image: url("/images_logos/wallhaven-q65m2q_1920x1080.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(255, 255, 255, 0.02) 0%,
+      rgba(0, 0, 0, 0.5) 85%
+    ),
+    radial-gradient(circle, rgba(76, 255, 76, 0.15) 1px, transparent 1px),
+    linear-gradient(135deg, #0d1117, #161b22, #010409);
+
+  background-size: cover, 24px 24px, cover;
   display: flex;
   flex-direction: column;
 }
@@ -65,7 +86,7 @@ i {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: clamp(8px, 2vw, 20px);
+  gap: clamp(8px, 2vw, 30px);
   flex-wrap: wrap;
 }
 
@@ -80,6 +101,11 @@ i {
 }
 
 .navbar a:hover {
+  border-color: #f1e3e4;
+  border-radius: 15px;
+}
+
+.navbar a.active {
   border-color: #f1e3e4;
   border-radius: 15px;
 }
@@ -116,7 +142,6 @@ i {
 
 #about-me {
   text-align: right;
-  color: #00ff00;
   font-size: clamp(38px, 7vw, 60px);
   line-height: 1.2;
   margin-bottom: clamp(24px, 5vw, 48px);
@@ -149,6 +174,10 @@ img {
   font-size: clamp(16px, 2vw, 20px);
   flex: 1;
   max-width: 720px;
+}
+
+span {
+  color: #7CFF7C;
 }
 
 footer {
@@ -191,7 +220,7 @@ footer p {
   }
 
   #info {
-    text-align: left;
+    text-align: justify;
     max-width: 100%;
   }
 

@@ -17,6 +17,22 @@
   box-sizing: border-box;
 }
 
+#main-content {
+  animation: pageLoad 0.6s ease-out;
+}
+
+@keyframes pageLoad {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 html::-webkit-scrollbar,
 body::-webkit-scrollbar {
   display: none;
@@ -28,14 +44,18 @@ html {
 
 body {
   min-height: 100vh;
-  background-image: url("/images_logos/wallhaven-q65m2q_1920x1080.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(255, 255, 255, 0.02) 0%,
+      rgba(0, 0, 0, 0.5) 85%
+    ),
+    radial-gradient(circle, rgba(76, 255, 76, 0.15) 1px, transparent 1px),
+    linear-gradient(135deg, #0d1117, #161b22, #010409);
+
+  background-size: cover, 24px 24px, cover;
   display: flex;
   flex-direction: column;
-  color: #f1e3e4;
 }
 
 .header {
@@ -66,7 +86,7 @@ i {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: clamp(8px, 2vw, 20px);
+  gap: clamp(8px, 2vw, 30px);
   flex-wrap: wrap;
 }
 
@@ -81,6 +101,11 @@ i {
 }
 
 .navbar a:hover {
+  border-color: #f1e3e4;
+  border-radius: 15px;
+}
+
+.navbar a.active {
   border-color: #f1e3e4;
   border-radius: 15px;
 }
@@ -117,7 +142,7 @@ i {
 
 #skills {
   text-align: center;
-  background-image: linear-gradient(180deg, #f1e3e4, #00ff00);
+  background-image: linear-gradient(90deg, #f1e3e4, #00ff00);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -132,11 +157,7 @@ i {
   line-height: 1.65;
   max-width: 680px;
   margin: 0 auto clamp(36px, 7vw, 86px);
-  background-image: linear-gradient(180deg, #f1e3e4, #00ff00);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
+  color: #9EFF9E;
 }
 
 .container {
@@ -160,6 +181,12 @@ i {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.3s ease-out;
+}
+
+.icon:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(76,255,76,0.15);
 }
 
 footer {
